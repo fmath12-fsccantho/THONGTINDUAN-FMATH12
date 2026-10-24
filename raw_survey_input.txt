@@ -1,0 +1,7 @@
+<USER_REQUEST>
+Mục KẾT QUẢ KHẢO SÁT THỰC TRẠNG HỌC SINH
+Đem toàn bộ tất cả các dòng lên web KHÔNG BỎ 1 DÒNG VÌ SẼ GÂY SAI LỆCH SỐ LIỆU
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-10-24T09:39:47+07:00.
+</ADDITIONAL_METADATA>
