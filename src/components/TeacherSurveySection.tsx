@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { 
   GraduationCap, Search, Download, Eye, FileSpreadsheet,
   CheckCircle2, AlertCircle, Sparkles, X, ChevronLeft, ChevronRight,
-  School, Clock, Award, ShieldCheck
+  School, Clock, Award, ShieldCheck, ExternalLink
 } from 'lucide-react';
 import { teacherSurvey35, TeacherSurveyRow } from '../data/teacherSurvey35';
 
@@ -97,6 +97,17 @@ export const TeacherSurveySection: React.FC = () => {
 
         {/* Action Downloads */}
         <div className="flex items-center gap-2.5 shrink-0 flex-wrap">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSenuPY4c57LB4vgwAsHlO1ln5sBQecebtBs3OC23But5VPnQA/viewform?usp=header"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-bold text-purple-700 dark:text-purple-300 bg-purple-50 dark:bg-purple-950/60 hover:bg-purple-100 dark:hover:bg-purple-900/50 border border-purple-200 dark:border-purple-800/60 shadow-xs transition active:scale-[0.98]"
+            title="Mở biểu mẫu khảo sát thực trạng giáo viên trên Google Forms"
+          >
+            <ExternalLink size={13} className="text-purple-600 dark:text-purple-400" />
+            <span>Form Khảo Sát Gốc (Google Form)</span>
+          </a>
+
           <a
             href="/Khao_Sat_Giao_Vien_35.xlsx"
             download

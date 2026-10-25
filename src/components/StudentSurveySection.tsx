@@ -3,7 +3,7 @@ import {
   Users, Search, Filter, Download, ArrowUpDown, Eye, 
   CheckCircle2, AlertTriangle, Sparkles, X, ChevronLeft, ChevronRight,
   School, Laptop, Clock, Star, HelpCircle, FileSpreadsheet,
-  BarChart3, Table, PieChart, Layers, Award
+  BarChart3, Table, PieChart, Layers, Award, ExternalLink
 } from 'lucide-react';
 import { studentSurvey574, StudentSurveyRow } from '../data/studentSurvey574';
 
@@ -140,6 +140,17 @@ export const StudentSurveySection: React.FC = () => {
 
         {/* Action Downloads & View Mode Toggle */}
         <div className="flex items-center gap-2.5 shrink-0 flex-wrap">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSc2A3ajEbcBlP5buZqL50QUisc1lE4YFFtFJP3XDlJWnfdilA/viewform?usp=header"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-purple-700 dark:text-purple-300 bg-purple-50 dark:bg-purple-950/60 hover:bg-purple-100 dark:hover:bg-purple-900/50 border border-purple-200 dark:border-purple-800/60 shadow-xs transition active:scale-[0.98]"
+            title="Mở biểu mẫu khảo sát thực trạng học sinh trên Google Forms"
+          >
+            <ExternalLink size={13} className="text-purple-600 dark:text-purple-400" />
+            <span>Form Khảo Sát Gốc (Google Form)</span>
+          </a>
+
           <div className="flex items-center p-1 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold">
             <button
               onClick={() => setViewMode('table')}
