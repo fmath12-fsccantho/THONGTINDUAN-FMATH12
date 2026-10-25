@@ -153,114 +153,114 @@ export function App() {
       </div>
 
       {/* ================= HEADER / NAVBAR ================= */}
-      <header className="sticky top-0 z-40 w-full backdrop-blur-2xl bg-white/85 dark:bg-[#090d16]/85 border-b border-slate-200/80 dark:border-slate-800/80 px-4 sm:px-8 py-3 transition-all shadow-xs">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+      <header className="sticky top-0 z-40 w-full backdrop-blur-2xl bg-white/90 dark:bg-[#070b14]/90 border-b border-slate-200/80 dark:border-slate-800/80 shadow-xs transition-colors">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 h-16 sm:h-[70px] gap-4">
           
           {/* Logo brand */}
-          <div className="flex items-center gap-3">
-            <div className="relative group cursor-pointer" onClick={() => scrollToSection(reportRef, 'baocao')}>
-              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-400 opacity-75 blur-xs group-hover:opacity-100 transition duration-300"></div>
-              <div className="relative w-10 h-10 rounded-2xl bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-900 text-white flex items-center justify-center font-bold text-xl shadow-md font-heading">
-                <span>∑</span>
-              </div>
+          <div 
+            className="flex items-center gap-3 shrink-0 cursor-pointer group select-none"
+            onClick={() => scrollToSection(reportRef, 'baocao')}
+          >
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-blue-700 to-indigo-600 text-white flex items-center justify-center font-bold text-xl shadow-md shadow-blue-500/20 font-heading group-hover:scale-105 transition-transform">
+              <span>∑</span>
             </div>
-            <div>
+            <div className="flex flex-col">
               <div className="flex items-center gap-2">
                 <span className="text-xl font-black font-heading tracking-tight text-slate-900 dark:text-white leading-none">
-                  FMATH<span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">12</span>
+                  FMATH<span className="text-blue-600 dark:text-blue-400">12</span>
                 </span>
-                <span className="px-2 py-0.5 text-[10px] font-extrabold uppercase rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-xs tracking-wider">
+                <span className="px-2 py-0.5 text-[10px] font-extrabold uppercase rounded-md bg-orange-500 text-white shadow-xs font-mono tracking-wider">
                   KHKT 2026
                 </span>
               </div>
-              <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">
-                Cổng Dữ Liệu & Minh Chứng Khoa Học
+              <p className="text-[11px] text-slate-400 dark:text-slate-500 font-medium leading-none mt-1">
+                Cổng Dữ Liệu & Báo Cáo
               </p>
             </div>
           </div>
 
-          {/* Quick jump navigation pills (Segmented Control) */}
-          <nav className="hidden lg:flex items-center gap-1 bg-slate-100/90 dark:bg-slate-800/60 p-1.5 rounded-2xl border border-slate-200/70 dark:border-slate-700/60 text-xs font-semibold backdrop-blur-md">
+          {/* Quick jump navigation pills (Segmented Control - Desktop) */}
+          <nav className="hidden lg:flex items-center gap-1 p-1 rounded-2xl bg-slate-100/90 dark:bg-slate-900/90 border border-slate-200/80 dark:border-slate-800 text-xs font-semibold backdrop-blur-md shrink-0">
             <button
               onClick={() => scrollToSection(reportRef, 'baocao')}
-              className={`px-3 py-1.5 rounded-xl transition flex items-center gap-1.5 ${
+              className={`whitespace-nowrap px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 ${
                 activeMainTab === 'baocao'
-                  ? 'bg-white dark:bg-slate-700 text-blue-600 dark:text-white shadow-xs font-bold'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+                  ? 'bg-white dark:bg-slate-800 text-blue-600 dark:text-blue-400 shadow-xs font-bold'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
-              <FileText size={13} className="text-blue-500" />
-              <span>Báo Cáo KHKT</span>
+              <FileText size={14} className="text-blue-500 shrink-0" />
+              <span>Báo Cáo</span>
             </button>
 
             <button
               onClick={() => scrollToSection(formsRef, 'forms')}
-              className={`px-3 py-1.5 rounded-xl transition flex items-center gap-1.5 ${
+              className={`whitespace-nowrap px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 ${
                 activeMainTab === 'forms'
-                  ? 'bg-white dark:bg-slate-700 text-purple-600 dark:text-white shadow-xs font-bold'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+                  ? 'bg-white dark:bg-slate-800 text-purple-600 dark:text-purple-400 shadow-xs font-bold'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
-              <ClipboardList size={13} className="text-purple-500" />
-              <span>Form Khảo Sát Gốc</span>
-              <span className="px-1.5 py-0.2 rounded-md bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 text-[10px] font-mono">
-                4 Forms
+              <ClipboardList size={14} className="text-purple-500 shrink-0" />
+              <span>Biểu Mẫu Gốc</span>
+              <span className="px-1.5 py-0.5 rounded-md bg-purple-100 dark:bg-purple-950/80 text-purple-700 dark:text-purple-300 text-[10px] font-mono font-bold leading-none">
+                4
               </span>
             </button>
 
             <button
               onClick={() => scrollToSection(thucTrangRef, 'thuctrang')}
-              className={`px-3 py-1.5 rounded-xl transition flex items-center gap-1.5 ${
+              className={`whitespace-nowrap px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 ${
                 activeMainTab === 'thuctrang'
-                  ? 'bg-white dark:bg-slate-700 text-indigo-600 dark:text-white shadow-xs font-bold'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+                  ? 'bg-white dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 shadow-xs font-bold'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
-              <Users size={13} className="text-indigo-500" />
-              <span>1. Khảo Sát Thực Trạng</span>
-              <span className="px-1.5 py-0.2 rounded-md bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 text-[10px] font-mono">
+              <Users size={14} className="text-indigo-500 shrink-0" />
+              <span>Thực Trạng</span>
+              <span className="px-1.5 py-0.5 rounded-md bg-indigo-100 dark:bg-indigo-950/80 text-indigo-700 dark:text-indigo-300 text-[10px] font-mono font-bold leading-none">
                 609
               </span>
             </button>
 
             <button
               onClick={() => scrollToSection(thucNghiemRef, 'thucnghiem')}
-              className={`px-3 py-1.5 rounded-xl transition flex items-center gap-1.5 ${
+              className={`whitespace-nowrap px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 ${
                 activeMainTab === 'thucnghiem'
-                  ? 'bg-white dark:bg-slate-700 text-cyan-600 dark:text-white shadow-xs font-bold'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+                  ? 'bg-white dark:bg-slate-800 text-cyan-600 dark:text-cyan-400 shadow-xs font-bold'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
-              <FlaskConical size={13} className="text-cyan-500" />
-              <span>2. Khảo Sát Thực Nghiệm</span>
-              <span className="px-1.5 py-0.2 rounded-md bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 text-[10px] font-mono">
+              <FlaskConical size={14} className="text-cyan-500 shrink-0" />
+              <span>Thực Nghiệm</span>
+              <span className="px-1.5 py-0.5 rounded-md bg-cyan-100 dark:bg-cyan-950/80 text-cyan-700 dark:text-cyan-300 text-[10px] font-mono font-bold leading-none">
                 585
               </span>
             </button>
 
             <button
               onClick={() => scrollToSection(referencesRef, 'references')}
-              className={`px-3 py-1.5 rounded-xl transition flex items-center gap-1.5 ${
+              className={`whitespace-nowrap px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 ${
                 activeMainTab === 'references'
-                  ? 'bg-white dark:bg-slate-700 text-amber-600 dark:text-white shadow-xs font-bold'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+                  ? 'bg-white dark:bg-slate-800 text-amber-600 dark:text-amber-400 shadow-xs font-bold'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
-              <Bookmark size={13} className="text-amber-500" />
-              <span>3. Tài Liệu Tham Khảo</span>
-              <span className="px-1.5 py-0.2 rounded-md bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 text-[10px] font-mono">
+              <Bookmark size={14} className="text-amber-500 shrink-0" />
+              <span>Tài Liệu</span>
+              <span className="px-1.5 py-0.5 rounded-md bg-amber-100 dark:bg-amber-950/80 text-amber-700 dark:text-amber-300 text-[10px] font-mono font-bold leading-none">
                 10
               </span>
             </button>
           </nav>
 
           {/* Right actions */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-2.5 shrink-0">
             <a
               href="http://localhost:5173"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-md shadow-blue-500/20 active:scale-[0.98] transition"
+              className="whitespace-nowrap inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-white bg-blue-600 hover:bg-blue-500 shadow-md shadow-blue-500/20 active:scale-95 transition"
               title="Mở ứng dụng chính FMATH12 (Cổng 5173)"
             >
               <span>Vào App FMATH12</span>
@@ -270,13 +270,62 @@ export function App() {
             {/* Dark mode toggle */}
             <button
               onClick={toggleDark}
-              className="p-2.5 rounded-xl text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition"
-              aria-label="Toggle theme"
+              className="w-10 h-10 rounded-xl text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 flex items-center justify-center transition shrink-0"
+              aria-label="Đổi giao diện sáng/tối"
             >
-              {isDark ? <Sun size={16} className="text-amber-400" /> : <Moon size={16} className="text-slate-600" />}
+              {isDark ? <Sun size={17} className="text-amber-400" /> : <Moon size={17} className="text-slate-600" />}
             </button>
           </div>
 
+        </div>
+
+        {/* Mobile Horizontal Sub-Navigation Strip */}
+        <div className="lg:hidden flex items-center gap-1.5 overflow-x-auto px-4 py-2 border-t border-slate-200/70 dark:border-slate-800/70 bg-slate-50/80 dark:bg-slate-950/80">
+          <button
+            onClick={() => scrollToSection(reportRef, 'baocao')}
+            className={`whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1 shrink-0 ${
+              activeMainTab === 'baocao' ? 'bg-blue-600 text-white' : 'text-slate-600 dark:text-slate-300'
+            }`}
+          >
+            <FileText size={13} />
+            <span>Báo Cáo</span>
+          </button>
+          <button
+            onClick={() => scrollToSection(formsRef, 'forms')}
+            className={`whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1 shrink-0 ${
+              activeMainTab === 'forms' ? 'bg-purple-600 text-white' : 'text-slate-600 dark:text-slate-300'
+            }`}
+          >
+            <ClipboardList size={13} />
+            <span>Form Gốc (4)</span>
+          </button>
+          <button
+            onClick={() => scrollToSection(thucTrangRef, 'thuctrang')}
+            className={`whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1 shrink-0 ${
+              activeMainTab === 'thuctrang' ? 'bg-indigo-600 text-white' : 'text-slate-600 dark:text-slate-300'
+            }`}
+          >
+            <Users size={13} />
+            <span>Thực Trạng (609)</span>
+          </button>
+          <button
+            onClick={() => scrollToSection(thucNghiemRef, 'thucnghiem')}
+            className={`whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1 shrink-0 ${
+              activeMainTab === 'thucnghiem' ? 'bg-cyan-600 text-white' : 'text-slate-600 dark:text-slate-300'
+            }`}
+          >
+            <FlaskConical size={13} />
+            <span>Thực Nghiệm (585)</span>
+          </button>
+          <button
+            onClick={() => scrollToSection(referencesRef, 'references')}
+            className={`whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1 shrink-0 ${
+              activeMainTab === 'references' ? 'bg-amber-600 text-white' : 'text-slate-600 dark:text-slate-300'
+            }`}
+          >
+            <Bookmark size={13} />
+            <span>Tài Liệu (10)</span>
+          </button>
         </div>
       </header>
 
